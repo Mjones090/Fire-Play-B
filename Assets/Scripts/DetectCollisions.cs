@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    //This is code to mean game object are destroyed if they collide with each other
+    //This is code to mean player game object destroyed if they collide with either the slugs or lawnmower monster
 
     // Start is called before the first frame update
     void Start()
