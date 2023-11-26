@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2815374392887133506}
   - component: {fileID: 5381620536984219975}
   - component: {fileID: 3458777139209119468}
+  - component: {fileID: 6906739048968334371}
   m_Layer: 0
   m_Name: Fuel
   m_TagString: Untagged
@@ -147,3 +148,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6906739048968334371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6363068866416466059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add0574357846fd4da9789c6e4990aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
