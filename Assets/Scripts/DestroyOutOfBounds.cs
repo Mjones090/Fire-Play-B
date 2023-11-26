@@ -6,8 +6,8 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     //This is code to destroy Game Object if they go off screen so stops gaem slowing down over time
 
-    public float zBoundaryRange = 10;
-    public float xBoundaryRange = 10;
+    public float zBoundaryRange = 12;
+    public float xBoundaryRange = 12;
     
 
     // Start is called before the first frame update

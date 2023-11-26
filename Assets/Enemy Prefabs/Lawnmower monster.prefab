@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5025044680414495853}
   - component: {fileID: 1471845941551821191}
   - component: {fileID: 4250193484012525996}
-  - component: {fileID: 8324253321173891802}
   - component: {fileID: 4072244076579351175}
+  - component: {fileID: 8781541046542142903}
   m_Layer: 0
   m_Name: Lawnmower monster
   m_TagString: Untagged
@@ -149,20 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &8324253321173891802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196719198300983100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add0574357846fd4da9789c6e4990aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zBoundaryRange: 10
-  xBoundaryRange: 10
 --- !u!114 &4072244076579351175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +161,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877fd2746456ef4439ad9a48dcca72c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8781541046542142903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196719198300983100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add0574357846fd4da9789c6e4990aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zBoundaryRange: 12
+  xBoundaryRange: 12

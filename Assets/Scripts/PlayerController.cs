@@ -10,13 +10,9 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
 
-    public float xRange = 5;
-    public float zRange = 5;
-
+    public float xRange = 8;
+    public float zRange = 8;
     public GameObject fuelPrefab;
-
-    public ParticleSystem rainParticleSystem;
-    public bool makeItRain = true;
 
     // Start is called before the first frame update
     void Start()
@@ -65,11 +61,4 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            rainParticleSystem.Play();
-        }
-    }
 }
