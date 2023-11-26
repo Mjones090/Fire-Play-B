@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float xRange = 5;
     public float zRange = 5;
 
+    public GameObject fuelPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +24,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Launch fuel projectile from player on pressing spacebar
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
+        }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
 
         //Keep player inbounds
         if(transform.position.x < -xRange)
@@ -45,6 +50,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
+
+
+        horizontalInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis("Vertical");
 
         //Move player forward
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
