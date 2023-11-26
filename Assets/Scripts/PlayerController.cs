@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float xRange = 8;
     public float zRange = 8;
     public GameObject fuelPrefab;
+    public bool hasFuel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     
     {
-        //Launch fuel projectile from player on pressing spacebar
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
+        if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
         {
             Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
         }
@@ -61,4 +62,12 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+       //Code to say if player goes over and touches fuel bunker then player has fuel. Once has fuel is then abel to fire it but not otherwise
+        if (other.CompareTag("Fuel Bunker"))
+        {
+            hasFuel = true;
+        }
+    }
 }
