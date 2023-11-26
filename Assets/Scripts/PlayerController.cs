@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject fuelPrefab;
 
+    public ParticleSystem rainParticleSystem;
+    public bool makeItRain = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    
     {
         //Launch fuel projectile from player on pressing spacebar
         if (Input.GetKeyDown(KeyCode.Space))
@@ -59,5 +63,13 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         //Allow player to turn around
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            rainParticleSystem.Play();
+        }
     }
 }
