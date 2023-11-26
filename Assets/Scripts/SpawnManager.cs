@@ -9,21 +9,19 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemyPrefabs;
     private float spawnRangeX = 0;
     private float spawnPosZ = 9;
+    private float startDelay = 2;
+    private float spawnInterval = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Spawn slug lawnmower monster enemies on pressing S key
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomEnemy();
-        }
+        
     }
 
     void SpawnRandomEnemy()
