@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
 
     public float xRange = 8;
     public float zRange = 8;
-    public GameObject fuelPrefab;
+    public GameObject Fuel;
     public bool hasFuel = false;
+
+    public Transform fuelFirepoint;
 
     // Start is called before the first frame update
     void Start()
@@ -25,15 +27,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     
     {
-        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
-        if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
-        {
-            Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
-        }
+        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel - changed this to below code so fuel instatiateed as per rotation of player
+        // if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
+        // {
+        //    Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
+        // }
 
+
+        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
+         if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
+         {
+            Fire();
+         }
 
         //Keep player inbounds
-        if(transform.position.x < -xRange)
+        if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
@@ -64,21 +72,37 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       //Code to say if player goes over and touches fuel bunker then player has fuel. Once has fuel is then abel to fire it but not otherwise
+       //Code to say if player goes over and touches fuel bunker then player has fuel. Once has fuel is then able to fire it but not otherwise
         if (other.CompareTag("Fuel Bunker"))
         {
             hasFuel = true;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
+    //private void OnCollisionEnter(Collision collision)
+   // {
         //Would like this to work but does not yet. Idea is that if player has gone to fuel bunker and has fuel and then collides with stove then message will appear.
         //I do not know why not working.
 
-        if (collision.gameObject.CompareTag("Stove") && hasFuel)
+        //if (collision.gameObject.CompareTag("Stove") && hasFuel)
+        //{
+           // Debug.Log("Collided with:" + collision.gameObject.name + "with fuel set to" + hasFuel);
+        //}
+   // }
+
+
+
+
+    void Fire()
+    {
+
+        //This is code to make the fuel fire from the fornt of the player.  I used Chat GPT and google searches to work out how to do this.
+        Vector3 spawnPosition = fuelFirepoint.position;
+        Quaternion spawnRotation = transform.rotation;
+
+     
         {
-            Debug.Log("Collided with:" + collision.gameObject.name + "with fuel set to" + hasFuel);
+          Instantiate(Fuel, spawnPosition, spawnRotation);
         }
     }
 }

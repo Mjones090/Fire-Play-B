@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //This code allows enemies to be spawned automatically after a slight delay nad wiht a slight interval between them each time
+        //This code allows enemies to be spawned automatically after a slight delay and with a slight interval between them each time
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);
     }
 
@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomEnemy()
     {
-        //This code is to allow the enemy slugs and lawnmower monsters to spawn at various locations on x axis but still be outside
+        //This code is to allow the enemy slugs and lawnmower monsters to spawn at various locations on x axis but still be outside the room
         Vector3 spawnPos = new Vector3(Random.Range(spawnRangeX, spawnRangeX + 3), 0, spawnPosZ);
 
 
