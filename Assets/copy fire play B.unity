@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 655122305}
   - component: {fileID: 655122304}
   - component: {fileID: 655122303}
+  - component: {fileID: 655122308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -534,6 +535,33 @@ Transform:
   - {fileID: 1951401960}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &655122308
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655122302}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5824,7 +5852,7 @@ GameObject:
   - component: {fileID: 1492284749}
   - component: {fileID: 1492284748}
   - component: {fileID: 1492284752}
-  - component: {fileID: 1492284751}
+  - component: {fileID: 1492284753}
   m_Layer: 0
   m_Name: Fuel Bunker
   m_TagString: Fuel Bunker
@@ -5891,13 +5919,34 @@ Transform:
   m_GameObject: {fileID: 1492284746}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.459834, y: -1.0236492, z: -5.0406065}
-  m_LocalScale: {x: 1.7652, y: 2.3536, z: 2.3536}
+  m_LocalPosition: {x: 8.459834, y: -0.29, z: -5.0406065}
+  m_LocalScale: {x: 2.9736524, y: 7.3651433, z: 3.9648702}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 377279962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1492284751
+--- !u!65 &1492284752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492284746}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6128497, y: 1.0954899, z: 0.22040161}
+  m_Center: {x: 0.19357605, y: -0.31617153, z: 0.042365305}
+--- !u!54 &1492284753
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5920,31 +5969,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1492284752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492284746}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1639904417
 GameObject:
   m_ObjectHideFlags: 0
