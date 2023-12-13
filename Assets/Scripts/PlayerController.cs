@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
 
     public Transform fuelFirepoint;
 
+    public int maxFuel = 3;
+    public int fuelFired = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     
     {
-        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel - changed this to below code so fuel instatiateed as per rotation of player
+        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
+        //changed this to below code so fuel instatiated as per rotation of player
         // if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
         // {
         //    Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
@@ -35,9 +40,10 @@ public class PlayerController : MonoBehaviour
 
 
         //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
-         if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
+         if (Input.GetKeyDown(KeyCode.Space) && hasFuel && fuelFired < maxFuel)
          {
             Fire();
+            fuelFired++;
          }
 
         //Keep player inbounds
@@ -72,7 +78,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       //Code to say if player goes over and touches fuel bunker then player has fuel. Once has fuel is then able to fire it but not otherwise
+       //Code to say if player goes over and touches fuel bunker then player has fuel.
+       //Once has fuel is then able to fire it but not otherwise
         if (other.CompareTag("Fuel Bunker"))
         {
             hasFuel = true;
@@ -83,7 +90,8 @@ public class PlayerController : MonoBehaviour
     void Fire()
     {
 
-        //This is code to make the fuel fire from the front of the player.  I used Chat GPT and google searches to work out how to do this.
+        //This is code to make the fuel fire from the front of the player.
+        //I used Chat GPT and google searches to work out how to do this.
         Vector3 spawnPosition = fuelFirepoint.position;
         Quaternion spawnRotation = transform.rotation;
 
