@@ -24,27 +24,36 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    
+
     {
-        //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
-        //changed this to below code so fuel instatiated as per rotation of player
-        // if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
-        // {
-        //    Instantiate(fuelPrefab, transform.position, fuelPrefab.transform.rotation);
-        // }
-
 
         //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
-         if (Input.GetKeyDown(KeyCode.Space) && hasFuel && fuelFired < maxFuel)
-         {
-            Fire();
-            fuelFired++;
-         }
+        if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
+
+        {
+            if (fuelFired < maxFuel)
+            {
+                Fire();
+                fuelFired++;
+            }
+
+            else if (fuelFired == maxFuel)
+            {
+                hasFuel = false;
+                fuelFired = 0;
+            }
+        }
+        //{
+           // Fire();
+       //}
+
+
+
 
         //Keep player inbounds
         if (transform.position.x < -xRange)
@@ -52,7 +61,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
 
-        if(transform.position.x > xRange)
+        if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
@@ -78,12 +87,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       //Code to say if player goes over and touches fuel bunker then player has fuel.
-       //Once has fuel is then able to fire it but not otherwise
+        //Code to say if player goes over and touches fuel bunker then player has fuel.
+        //Once has fuel is then able to fire it but not otherwise
         if (other.CompareTag("Fuel Bunker"))
         {
             hasFuel = true;
         }
+
     }
 
 
@@ -95,9 +105,11 @@ public class PlayerController : MonoBehaviour
         Vector3 spawnPosition = fuelFirepoint.position;
         Quaternion spawnRotation = transform.rotation;
 
-     
+
         {
-          Instantiate(Fuel, spawnPosition, spawnRotation);
+            Instantiate(Fuel, spawnPosition, spawnRotation);
         }
+
     }
 }
+
