@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     {
 
         //Launch fuel projectile from player on pressing spacebar but only if they have touched the fuel bunker to get fuel
+        //once launch x3 pieces of fuel then have to return to bunker to get more.
+        //I chose x3 pieces of fuel at a time as thats about the amount someone would carry.
+
         if (Input.GetKeyDown(KeyCode.Space) && hasFuel)
 
         {
@@ -48,10 +51,6 @@ public class PlayerController : MonoBehaviour
                 fuelFired = 0;
             }
         }
-        //{
-           // Fire();
-       //}
-
 
 
 

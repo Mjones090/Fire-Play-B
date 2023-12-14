@@ -446,6 +446,8 @@ MonoBehaviour:
   Fuel: {fileID: 6363068866416466059, guid: f447d0f8ed36f05409e3b6e8fe27452c, type: 3}
   hasFuel: 0
   fuelFirepoint: {fileID: 1951401960}
+  maxFuel: 3
+  fuelFired: 0
 --- !u!136 &655122304
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5919,8 +5921,8 @@ Transform:
   m_GameObject: {fileID: 1492284746}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.459834, y: -0.29, z: -5.0406065}
-  m_LocalScale: {x: 2.9736524, y: 7.3651433, z: 3.9648702}
+  m_LocalPosition: {x: 8.459834, y: -0.063672, z: -5.0406065}
+  m_LocalScale: {x: 2.9736524, y: 3.7507358, z: 2.6362686}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 377279962}
