@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StoveController : MonoBehaviour
 {
+    //Used ChatGPt to help with this script
 
     public bool isHit = false;
     public Renderer stoveRenderer;
