@@ -85,6 +85,9 @@ public class PlayerController : MonoBehaviour
 
         //Stop Player Rigidbody walking through walls
         //ran out of time trying to work this out
+        //Made it so that the walls had rigidbody + colliders that destroys just the player if collision occurs and so Game Over
+        //I know not perfect solution but playability seems good I think still. Maybe even better as harder to get to Fuel bunker.
+        //I saw tutorials on other methods to make Player move that should solve this.
 
         
     }
