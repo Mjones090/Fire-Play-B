@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
         //Stop Player Rigidbody walking through walls
+        //ran out of time trying to work this out
 
         
     }
