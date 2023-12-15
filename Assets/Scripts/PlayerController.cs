@@ -82,6 +82,10 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         //Allow player to turn around
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
+        //Stop Player Rigidbody walking through walls
+
+        
     }
 
     private void OnTriggerEnter(Collider other)

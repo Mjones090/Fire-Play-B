@@ -690,7 +690,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743841639}
   serializedVersion: 4
-  m_Mass: 10000
+  m_Mass: 1000000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -723,6 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHit: 0
   stoveRenderer: {fileID: 0}
+  dogPrefab: {fileID: 2285084248568625472, guid: 3307c7486a62aea4b958c188fe3ee71a, type: 3}
+  collisionCount: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
