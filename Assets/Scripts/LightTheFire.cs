@@ -5,25 +5,24 @@ using UnityEngine;
 public class LightTheFire : MonoBehaviour
 {
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Stove")
+        if (collision.gameObject.CompareTag("Stove"))
         {
             //Increase temperature
+            //Will display this by stove changing colour if hit by x1 piece of fuel
+            //If stove hit by all three pieces of fuel then will make pet dog appear and that is level complete
+
+            Destroy(gameObject);
+
+            collision.gameObject.GetComponent<StoveController>().OnHitByFuel();
+
 
         }
+
+
+
     }
 }
