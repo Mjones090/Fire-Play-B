@@ -361,7 +361,7 @@ MonoBehaviour:
   xRange: 8
   zRange: 8
   Fuel: {fileID: 6363068866416466059, guid: f447d0f8ed36f05409e3b6e8fe27452c, type: 3}
-  hasFuel: 1
+  hasFuel: 0
   fuelFirepoint: {fileID: 1951401960}
   maxFuel: 3
   fuelFired: 0
