@@ -9,19 +9,15 @@ public class GameManager : MonoBehaviour
    //public TextMeshProUGUI fuelText;
     //private int fuel;
 
-       public TextMeshProUGUI gameOverText;
-    
+     public TextMeshProUGUI gameOverText;
+     public TextMeshProUGUI youWinText;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // fuel = 0;
         // updateFuel(0);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 
@@ -32,19 +28,9 @@ public class GameManager : MonoBehaviour
         //fuelText.text = "Fuel: " + fuel;
     //}
 
-    public void GameOver()
-    {
-        gameOverText.gameObject.SetActive(true);
-    }
+    //public void GameOver()
+        //I want this to work such that if Player is destroyed then Game Over is displayed
+        //If Dog appears I want You Win to be displayed
+        //If either Game Over or You Win occurs then want button to enable restart game
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //Destroy(gameObject);
-        Destroy(other.gameObject);
-        if (other.gameObject.CompareTag("Player"))
-        {
-            GameOver();
-        }
-
-    }
 }
